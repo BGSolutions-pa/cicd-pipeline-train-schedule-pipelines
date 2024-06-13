@@ -1,6 +1,13 @@
 pipeline {
   agent any
   stages {
+    stage ('Debug') {
+      steps {
+        sh 'date'
+        sh 'cat /etc/os-release'
+        sh 'free'
+      }
+    }
     stage ('Build') {
       steps {
         sh 'java --version'
